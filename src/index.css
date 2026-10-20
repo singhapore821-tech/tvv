@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #08080a;
+    color: #ffffff;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+::-webkit-scrollbar-thumb {
+  background: #232634;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2a5f;
+}
+
+/* Animations for emoji bursts */
+@keyframes emojiFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 50%) scale(0.3) rotate(-15deg);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -20%) scale(1.4) rotate(5deg);
+  }
+  70% {
+    opacity: 0.95;
+    transform: translate(-50%, -60%) scale(1.1) rotate(-5deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%) scale(0.8) rotate(10deg);
+  }
+}
+
+.animate-emoji-burst {
+  animation: emojiFloat 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulsing radar for matchmaking */
+@keyframes radarPing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-radar-1 {
+  animation: radarPing 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.animate-radar-2 {
+  animation: radarPing 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite 0.8s;
+}
+.animate-radar-3 {
+  animation: radarPing 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite 1.6s;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(18, 18, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}

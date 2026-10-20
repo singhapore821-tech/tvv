@@ -1,0 +1,6 @@
+{
+  "name": "VIBE TV - Live Random Video Chat & Android Blueprint",
+  "description": "Production random video chat application built with WebRTC, real-time signaling, Firebase architecture, and complete Android Studio Java codebase.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
